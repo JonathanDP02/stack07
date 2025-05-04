@@ -34,5 +34,32 @@ public class stackSurat07 {
         }
     }
 
-    
+    public surat07 pop(){
+        if(!isEmpty()){
+            surat07 m = stack[top];
+            top--;
+            return m;
+        }else{
+            System.out.println("Stack kosong! Tidak ada surat untuk verifikasi.");
+            return null;
+        }
+    }
+
+    public surat07 peek(){
+        if(!isEmpty()){
+            return stack[top];
+        }else{
+            System.out.println("Stack kosong! Tidak ada surat yang dikumpulkan");
+            return null;
+        }
+    }
+
+    public boolean cariSurat(String nama){
+        for (int i = 0; i <= top; i++) {
+            if (stack[i].namaMahasiswa.equalsIgnoreCase(nama)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
